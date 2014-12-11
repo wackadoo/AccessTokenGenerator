@@ -11,9 +11,36 @@ public class AccessToken {
 	private static final String SHARED_SECRET = "ARandomStringWithGoodEntropy";
 	private static final SimpleDateFormat timestampFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
 	
+	/**
+	 * AccessTokenDemo
+	 * If no args are passed create a token with the defualt identifier and default scope
+	 * When started the demo from the command line call the method like this
+	 * java -jar
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		String[] scope = {"payment", "scope"};
-		String res = generateAccessToken("wackadoo", scope);
+		String identifier = null;
+		String[] scope;
+
+		// Should have at minimun one identifier and one scope arg
+		if (args.length >= 2)
+		{
+			identifier = args[0];
+			scope = new String[args.length-1];
+			int scopeNr = 0;
+			for (int i = 1; i < args.length; i++) {
+				scope[scopeNr++] = args[i];
+			}
+		}
+		else
+		{
+			scope = new String[2]; 
+			scope[0] = "payment";
+			scope[1] = "scope";
+			identifier = "wackadoo";
+		}
+
+		String res = generateAccessToken(identifier, scope);
 
 		System.out.println(res);
 	}
