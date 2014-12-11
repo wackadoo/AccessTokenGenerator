@@ -10,17 +10,24 @@ Use the Generator
 
 Run the demo from the terminal with default values:
 
-  java -jar AccessTokenGenerator.jar
+```
+java -jar AccessTokenGenerator.jar
+```
 or
-  java -jar AccessTokenGenerator.jar identifer scope1 scope2
+```
+java -jar AccessTokenGenerator.jar identifer scope1 scope2
+```
 
 You have to run the demo with at least one identifier and one scope argument!
+
 When you want to use the generator on your server call
 
   generateAccessToken(String identifier, String[] scope)
 
 like this
 
-  String identifier = "identifier";
-  String[] scope = {"scope1", "scope2"}
-  generateAccessToken(indetifier, scope)
+```java
+String identifier = "identifier";
+String[] scope = {"scope1", "scope2"}
+generateAccessToken(indetifier, scope)
+```
