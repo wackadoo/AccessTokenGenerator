@@ -8,7 +8,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 public class AccessToken {
 
-	private static final String SHARED_SECRET = "ARandomStringWithGoodEntropy";
+	private static final String SHARED_SECRET = "8e9bb6bdc8b156acc7f34c4b2af5ba89a00fbe9ceac4b9f724175ae5f3217542ea7fb742f1e564ecbf296d60223f501499f91fd53c2c159c52cb86cbdcc4c640";
 	private static final SimpleDateFormat timestampFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX");
 	
 	/**
